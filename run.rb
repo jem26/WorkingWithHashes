@@ -8,6 +8,19 @@ get '/' do
 end
 
 get '/states' do
-  # code!
+  @states = []
+  state = {"id"=>"IL", "state"=>"Illinois"}
+  @states.push(state)
+  state = {"id"=>"CA", "state"=>"California"}
+  @states.push(state)
+  state = {"id"=>"IN", "state"=>"Indiana"}
+  @states.push(state)
+  state = {"id"=>"OH", "state"=>"Ohio"}
+  @states.push(state)
+  state = {"id"=>"AL", "state"=>"Alabama"}
+  @states.push(state)
+
+  @states.sort_by! { |hash| hash["state"]}
+
   erb :states, layout: :main
 end
