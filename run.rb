@@ -10,7 +10,10 @@ end
 get '/states' do
   @states = []
   state = {"id"=>"IL", "state"=>"Illinois"}
-  @states.push(state)
+
+  # most ruby devs prefer and use << to push into an array
+  @states << state
+
   state = {"id"=>"CA", "state"=>"California"}
   @states.push(state)
   state = {"id"=>"IN", "state"=>"Indiana"}

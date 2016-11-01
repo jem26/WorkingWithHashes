@@ -6,10 +6,7 @@
 
 <select>
 	<% @states.each do | state | %>
-		<% if state["id"] == "IL" %>
-			<option value= <%= state["id"] %> selected> <%= state["state"] %> </option>
-		<% else %>
-			<option value= <%= state["id"] %> > <%= state["state"] %> </option>
-		<% end %>
+		<%# this works but it's too much repetition. add an if block inline %>
+		<option value= <%= state["id"] %> <% if state["id"] == "IL" %> selected <% end %>> <%= state["state"] %> </option>
 	<% end %>
 </select>
